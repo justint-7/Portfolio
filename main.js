@@ -12,8 +12,10 @@ portfolioApp.InitialSlideAnimation = () =>{
 
 portfolioApp.setProjectListeners = () =>{
     let x=0;
+    let xPercent=0;
     let isDrag = false;
     const projectDisplay = document.querySelector('.projectDisplay');
+    const currentBar = document.querySelector('.currentBar');
     projectDisplay.addEventListener('mousedown', (event)=>{
         isDrag =true;        
     });
@@ -22,7 +24,9 @@ portfolioApp.setProjectListeners = () =>{
         if (isDrag){
            if (x<=0 || x >= -3000 +document.documentElement.clientWidth *.9){
                 x= x+event.movementX;
+                xPercent= (x/(-3000 +document.documentElement.clientWidth *.9))*90;
                 projectDisplay.style.left=`${x}px`;
+                currentBar.style.left=`${xPercent}%`
                 console.log(x);
            }
             // if (x>0){
@@ -44,9 +48,11 @@ portfolioApp.setProjectListeners = () =>{
         if (x>0){
             x=0;
             projectDisplay.style.left=`${x}px`;
+            currentBar.style.left='0%'
         } else if (x<-3000 +document.documentElement.clientWidth *.9){
             x=-3000 +document.documentElement.clientWidth *.9;
             projectDisplay.style.left=`${x}px`;
+            currentBar.style.left='90%'
         }       
     });  
     console.log (-3000 +document.documentElement.clientWidth *.9)

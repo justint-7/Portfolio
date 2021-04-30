@@ -699,12 +699,13 @@ section {
   height: 5px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 .currentBar {
   background-color: #3e4455;
   height: inherit;
-  width: 25%;
+  width: 10%;
   position: absolute;
 }
 
