@@ -20,7 +20,7 @@ body{
 }
 
 .innerWrapper{
-    background-color: green;
+
     max-width: 1820px;
     width: 95%;
 }
@@ -59,3 +59,16 @@ h4{
     letter-spacing: 2px;
  }
 
+ button{
+    background-color: #fbc25e;
+    border: none;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: 180px;
+    height: 55px;
+    transition: 0.25s;
+    &:hover{
+        background-color: red;
+    }
+}

@@ -256,7 +256,6 @@ body {
 }
 
 .innerWrapper {
-  background-color: green;
   max-width: 1820px;
   width: 95%;
 }
@@ -293,6 +292,22 @@ h4 {
   color: #fbc25e;
   font-weight: bold;
   letter-spacing: 2px;
+}
+
+button {
+  background-color: #fbc25e;
+  border: none;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  width: 180px;
+  height: 55px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+button:hover {
+  background-color: red;
 }
 
 header {
@@ -434,6 +449,7 @@ aside {
           align-items: center;
   background-color: #191d28;
   min-width: 50px;
+  z-index: 2;
 }
 
 .menuIconContainer {
@@ -466,7 +482,7 @@ aside {
   font-size: 1.1rem;
 }
 
-.about {
+section {
   height: 100vh;
   max-height: 1080px;
   background-color: #ffffff;
@@ -553,4 +569,73 @@ aside {
 
 .flexSkill i {
   font-size: 3rem;
+}
+
+.projects {
+  background-image: url("../assets/Overlay.png");
+  background-color: #1f222d;
+}
+
+.projects h2 {
+  color: #ffffff;
+}
+
+.projectIntroParent,
+.projectButtons {
+  padding: 10% 0 0 15%;
+}
+
+.projectDisplay {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.projectDisplay li {
+  width: 500px;
+  padding: 0 1% 0 1%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.projectImageContainer {
+  background-color: grey;
+  height: 100%;
+}
+
+.projectImageContainer p {
+  height: 100%;
+  width: 100%;
+}
+
+.projectButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5% 0 0 0;
+}
+
+.projectButtons button {
+  margin: 0 10px;
+}
+
+.scrollBar {
+  background-color: #e1e9fb;
+  width: 60%;
+  height: 5px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.currentBar {
+  background-color: #3e4455;
+  height: inherit;
+  width: 25%;
+  position: absolute;
 }
