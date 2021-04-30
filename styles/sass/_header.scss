@@ -1,5 +1,6 @@
 header{
     height: 100vh;
+    max-width: 95vw;
     max-height: 1080px;
     background-image: url("../assets/testBackground.jpg");
     position: relative;
@@ -115,9 +116,7 @@ p{
         content:"";
         display:block;
         padding-bottom: 100%;
-        
     }
-   
     &:hover{
         width: 7.5%;
         background-color: red;

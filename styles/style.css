@@ -312,6 +312,7 @@ button:hover {
 
 header {
   height: 100vh;
+  max-width: 95vw;
   max-height: 1080px;
   background-image: url("../assets/testBackground.jpg");
   position: relative;
@@ -470,7 +471,6 @@ aside {
   max-width: 100px;
   background-color: #191d28;
   height: 100vh;
-  min-width: 50px;
   position: relative;
 }
 
@@ -538,6 +538,10 @@ section {
   background-color: #ffffff;
 }
 
+.about {
+  min-height: 900px;
+}
+
 .flexParentMain {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -579,6 +583,9 @@ section {
   border: 1px solid #e1e9fb;
   max-width: 370px;
   max-height: 198px;
+  height: 100%;
+  width: 30%;
+  margin: 0 1.25% 0 1.25%;
 }
 
 .skillsParent li h3, .skillsParent li i {
@@ -586,23 +593,28 @@ section {
   color: #3d4862;
 }
 
+.skillsParent li h3 {
+  height: 60px;
+  padding-top: 10%;
+  margin: 0;
+}
+
 .skillsParent li i {
   padding-left: 5%;
+  width: 60px;
 }
 
 .skillsParent li p {
   color: #54668b;
   padding: 0 5% 0 5%;
+  height: 60px;
+  text-align: center;
 }
 
 .skillsParent li .stripe {
   background-color: #fbc25e;
   height: 0.8rem;
   width: 100%;
-}
-
-.skillsParent li:nth-child(2) {
-  margin: 0 2.5% 0 2.5%;
 }
 
 .flexSkill {
@@ -688,4 +700,10 @@ section {
   height: inherit;
   width: 25%;
   position: absolute;
+}
+
+@media (max-width: 1015px) {
+  html {
+    font-size: 100%;
+  }
 }

@@ -4,6 +4,10 @@ max-height: 1080px;
 background-color: #ffffff;
 }
 
+.about{
+    min-height: 900px;
+}
+
 .flexParentMain{
     display: flex;
     margin: 0% 0% 0% 15%;
@@ -37,16 +41,28 @@ background-color: #ffffff;
         border: 1px solid #e1e9fb;
         max-width: 370px;
         max-height: 198px;
+        height: 100%;
+        width: 30%;
+        margin: 0 1.25% 0 1.25%;
         h3, i{
             text-align: center;
             color: #3d4862;
         }
+        h3{
+            height: 60px;
+            padding-top: 10%;
+            margin: 0;
+        }
         i{
             padding-left: 5%;
+            width: 60px
         }
         p{
             color: #54668b;
             padding: 0 5% 0 5%;
+            height: 60px;
+            text-align: center;
+            
         }
         .stripe{
             background-color: #fbc25e;
@@ -54,9 +70,7 @@ background-color: #ffffff;
             width: 100%;
         }
     }
-    li:nth-child(2) {
-        margin: 0 2.5% 0 2.5%;
-      }
+
 }
 
 .flexSkill{
