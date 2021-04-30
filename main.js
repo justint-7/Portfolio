@@ -13,29 +13,43 @@ portfolioApp.InitialSlideAnimation = () =>{
 portfolioApp.setProjectListeners = () =>{
     let x=0;
     let xPercent=0;
-    let isDrag = false;
+    let isDragImages = false;
+    let isDragBar=false;
     const projectSection = document.querySelector('.projects');
     const projectDisplay = document.querySelector('.projectDisplay');
     const currentBar = document.querySelector('.currentBar');
+
     projectDisplay.addEventListener('mousedown', (event)=>{
         event.preventDefault;
-        isDrag =true;        
+        isDragImages =true;        
     });
 
     projectSection.addEventListener('mousemove', (event)=>{
-        if (isDrag){
+        if (isDragImages){
            if (x<=0 || x >= -3000 +document.documentElement.clientWidth *.9){
                 x= x+event.movementX;
-                xPercent= (x/(-3000 +document.documentElement.clientWidth *.9))*90;
                 projectDisplay.style.left=`${x}px`;
-                currentBar.style.left=`${xPercent}%`
-                console.log(x);
+                xPercent= (x/(-3000 +document.documentElement.clientWidth *.9))*90;
+                if (xPercent>0 && xPercent<90){
+                currentBar.style.left=`${xPercent}%`;
+                } else if (xPercent<0){
+                    currentBar.style.left='0%'
+                }
+                else {
+                    currentBar.style.left='90%'
+                }
            }
+        }
+        if (isDragBar){
+            if (xPercent>0){
+                
+            }
         }
         
     });
     projectSection.addEventListener('mouseup', (event)=>{
-        isDrag=false;
+        isDragImages=false;
+        isDragBar=false;
         if (x>0){
             x=0;
             projectDisplay.style.left=`${x}px`;
@@ -46,7 +60,16 @@ portfolioApp.setProjectListeners = () =>{
             currentBar.style.left='90%'
         }       
     });  
-    console.log (-3000 +document.documentElement.clientWidth *.9)
+
+    currentBar.addEventListener('mousedown', (event)=>{
+        event.preventDefault;
+        isDragBar=true;      
+    });
+
+
+
+    
+
     
 
     
