@@ -22,16 +22,18 @@
         width: 500px;
         padding: 0 1% 0 1%;
         flex-shrink: 0;
+        }
     }
-}
+
+
 .projectImageContainer{
     background-color: grey;
     height: 100%;
     position: relative;
-    p{
-        height: 100%;
-        width: 100%;
-        margin: 0;
+    transition: 0.5s;
+    &:hover{
+        background-color: black;
+
     }
 }
 

@@ -673,12 +673,12 @@ section {
   background-color: grey;
   height: 100%;
   position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
-.projectImageContainer p {
-  height: 100%;
-  width: 100%;
-  margin: 0;
+.projectImageContainer:hover {
+  background-color: black;
 }
 
 .projectButtons {
