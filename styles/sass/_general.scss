@@ -1,0 +1,53 @@
+html {
+    font-size: 125%;
+    /* 125% = 20px */
+}
+
+
+body{
+    background: black;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.outerWrapper{
+    background-color: white;
+    max-width: 1920px;
+
+    margin: 0 auto;
+    display: flex;
+}
+
+.innerWrapper{
+    background-color: green;
+    max-width: 1820px;
+    width: 95%;
+}
+
+.sideBar{
+    width: 5vw;
+    max-width: 100px;
+    background-color: red;
+    height: 100vh;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul{
+   list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+main{
+    height: 100vh;
+    width: 100%;
+    background-color: purple;
+}

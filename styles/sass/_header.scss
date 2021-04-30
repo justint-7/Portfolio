@@ -1,0 +1,44 @@
+header{
+    height: 100vh;
+    max-height: 1080px;
+    background-image: url("../assets/testBackground.jpg");
+    position: relative;
+    overflow: hidden;
+    .backgroundOverlayContainer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1080px;
+        width: 1920px;
+        z-index: 0;
+    }
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    ul{
+        margin-top: 4%;
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        z-index: 1;
+        li{
+            font-size: 0.8rem;
+            margin: 0% 2.5% 0 2.5%;
+            color: #c0c4d6;
+            font-weight: 500;
+            letter-spacing: 3px;
+        }
+        .home{
+            color: #e4b86d;
+            }
+        }
+    }
+
+
+
+
+
+
