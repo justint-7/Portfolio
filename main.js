@@ -14,13 +14,15 @@ portfolioApp.setProjectListeners = () =>{
     let x=0;
     let xPercent=0;
     let isDrag = false;
+    const projectSection = document.querySelector('.projects');
     const projectDisplay = document.querySelector('.projectDisplay');
     const currentBar = document.querySelector('.currentBar');
     projectDisplay.addEventListener('mousedown', (event)=>{
+        event.preventDefault;
         isDrag =true;        
     });
 
-    projectDisplay.addEventListener('mousemove', (event)=>{
+    projectSection.addEventListener('mousemove', (event)=>{
         if (isDrag){
            if (x<=0 || x >= -3000 +document.documentElement.clientWidth *.9){
                 x= x+event.movementX;
@@ -29,21 +31,10 @@ portfolioApp.setProjectListeners = () =>{
                 currentBar.style.left=`${xPercent}%`
                 console.log(x);
            }
-            // if (x>0){
-            //     x= 0;
-            //     projectDisplay.style.left=`${x}px`;
-            // } else if (x<= -2000){
-            //     x= -2000;
-            //     projectDisplay.style.left=`${x}px`;
-            // }else {
-            //     x= x+event.movementX;
-            //     projectDisplay.style.left=`${x}px`;
-            //     console.log(x);
-            // }
         }
         
     });
-    projectDisplay.addEventListener('mouseup', (event)=>{
+    projectSection.addEventListener('mouseup', (event)=>{
         isDrag=false;
         if (x>0){
             x=0;
