@@ -281,6 +281,20 @@ main {
   background-color: purple;
 }
 
+h2 {
+  font-size: 1.8rem;
+  color: #3d4862;
+  margin: 0.25rem 0 0.25rem 0;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 0.8rem;
+  color: #fbc25e;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
 header {
   height: 100vh;
   max-height: 1080px;
@@ -339,13 +353,6 @@ h1 {
 
 h1 span {
   color: #fbc25e;
-}
-
-.hello {
-  font-size: 0.8rem;
-  color: #fbc25e;
-  font-weight: 500;
-  letter-spacing: 3px;
 }
 
 .textAndButton {
@@ -454,7 +461,96 @@ aside {
           flex-direction: column;
 }
 
-.socials .fab {
+.socials i {
   margin-top: 100%;
   font-size: 1.1rem;
+}
+
+.about {
+  height: 100vh;
+  max-height: 1080px;
+  background-color: #ffffff;
+}
+
+.flexParentMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0% 0% 0% 15%;
+  padding-top: 5%;
+}
+
+.who {
+  color: #717896;
+}
+
+.flexText {
+  padding: 0 0% 0% 5%;
+  width: 50%;
+}
+
+.flexText p {
+  width: 90%;
+  color: #54668b;
+  font-weight: medium;
+}
+
+.flexText button {
+  margin-top: 10%;
+}
+
+.skillsParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0% 5% 0% 5%;
+}
+
+.skillsParent li {
+  border: 1px solid #e1e9fb;
+  max-width: 370px;
+  max-height: 198px;
+}
+
+.skillsParent li h3, .skillsParent li i {
+  text-align: center;
+  color: #3d4862;
+}
+
+.skillsParent li i {
+  padding-left: 5%;
+}
+
+.skillsParent li p {
+  color: #54668b;
+  padding: 0 5% 0 5%;
+}
+
+.skillsParent li .stripe {
+  background-color: #fbc25e;
+  height: 0.8rem;
+  width: 100%;
+}
+
+.skillsParent li:nth-child(2) {
+  margin: 0 2.5% 0 2.5%;
+}
+
+.flexSkill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexSkill i {
+  font-size: 3rem;
 }
