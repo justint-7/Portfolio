@@ -10,24 +10,30 @@
     padding: 10% 0 0 15%;
 }
 
+.projectViewScreen{
+    position:relative;
+    overflow: hidden;
+}
 .projectDisplay{
-    width: 100%;
+    position: relative;
     height: 300px;
     display: flex;
-    overflow: hidden;
+    
+
     li{
         width: 500px;
         padding: 0 1% 0 1%;
         flex-shrink: 0;
-
     }
 }
 .projectImageContainer{
     background-color: grey;
     height: 100%;
+    position: relative;
     p{
         height: 100%;
         width: 100%;
+        margin: 0;
     }
 }
 

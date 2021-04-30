@@ -647,13 +647,17 @@ section {
   padding: 10% 0 0 15%;
 }
 
+.projectViewScreen {
+  position: relative;
+  overflow: hidden;
+}
+
 .projectDisplay {
-  width: 100%;
+  position: relative;
   height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
 }
 
 .projectDisplay li {
@@ -666,11 +670,13 @@ section {
 .projectImageContainer {
   background-color: grey;
   height: 100%;
+  position: relative;
 }
 
 .projectImageContainer p {
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 .projectButtons {
