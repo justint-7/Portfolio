@@ -1,0 +1,39 @@
+
+aside{
+    width: 5vw;
+    max-width: 100px;
+    background-color: #191d28;
+    height: 100vh;
+    min-width: 50px;
+    position: relative;
+}
+
+.sideBar{
+    position: fixed;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #191d28;
+    min-width: 50px;
+}
+
+.menuIconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+.socials{
+    position: fixed;
+    bottom: 5%;
+    display: flex;
+    flex-direction: column;
+
+    .fab{
+        margin-top: 100%;
+        font-size: 1.1rem;
+    }
+}

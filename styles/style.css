@@ -243,6 +243,7 @@ html {
 body {
   background: black;
   font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 .outerWrapper {
@@ -258,13 +259,6 @@ body {
   background-color: green;
   max-width: 1820px;
   width: 95%;
-}
-
-.sideBar {
-  width: 5vw;
-  max-width: 100px;
-  background-color: red;
-  height: 100vh;
 }
 
 img {
@@ -293,6 +287,7 @@ header {
   background-image: url("../assets/testBackground.jpg");
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 header .backgroundOverlayContainer {
@@ -301,20 +296,20 @@ header .backgroundOverlayContainer {
   left: 0;
   height: 1080px;
   width: 1920px;
-  z-index: 0;
+  z-index: -1;
 }
 
 nav {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 1;
 }
 
-nav ul {
+nav .topNav {
   margin-top: 4%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -323,10 +318,9 @@ nav ul {
       -ms-flex-pack: center;
           justify-content: center;
   width: 90%;
-  z-index: 1;
 }
 
-nav ul li {
+nav .topNav li {
   font-size: 0.8rem;
   margin: 0% 2.5% 0 2.5%;
   color: #c0c4d6;
@@ -334,6 +328,133 @@ nav ul li {
   letter-spacing: 3px;
 }
 
-nav ul .home {
+nav .topNav .home {
   color: #e4b86d;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+h1 span {
+  color: #fbc25e;
+}
+
+.hello {
+  font-size: 0.8rem;
+  color: #fbc25e;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.textAndButton {
+  margin: 10% 0 0 15%;
+}
+
+p {
+  font-size: 0.75rem;
+}
+
+button {
+  background-color: #fbc25e;
+  border: none;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  width: 180px;
+  height: 55px;
+}
+
+.buttonContainer {
+  margin-top: 5%;
+}
+
+.emailContainer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #fbc25e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5%;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.emailContainer:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.emailContainer .fa-envelope {
+  color: #000000;
+}
+
+aside {
+  width: 5vw;
+  max-width: 100px;
+  background-color: #191d28;
+  height: 100vh;
+  min-width: 50px;
+  position: relative;
+}
+
+.sideBar {
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #191d28;
+  min-width: 50px;
+}
+
+.menuIconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+}
+
+.socials {
+  position: fixed;
+  bottom: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.socials .fab {
+  margin-top: 100%;
+  font-size: 1.1rem;
 }
