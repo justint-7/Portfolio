@@ -30,13 +30,30 @@ nav{
             color: #c0c4d6;
             font-weight: 500;
             letter-spacing: 3px;
+            
         }
         .home{
             color: #e4b86d;
-            }
+        }
+        a{
+            transition: 0.25s;
         }
     }
+}
 
+.topNav a:hover{
+    color: red;
+    
+}
+
+
+.helloContainer{
+    display: flex;
+    img{
+        height: 2px;
+        margin: 1.5rem 1rem 0 0;
+    }
+}
  h1{
      font-size: 3rem;
      margin: 0.5rem 0 0.5rem 0; 
@@ -47,16 +64,39 @@ nav{
  
 .textAndButton{
     margin: 10% 0 0 15%;
+    height: 40%;
+    position: relative;
+}
+
+.textSlide{
+    position: absolute;
+    transition: 2s;
+    left: -30%;
+    opacity: 0;
+
+}
+
+.textSlide.After {
+    left: 0;
+    bottom: 25%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.buttonContainer{
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    margin-top: 5%;
+    transition: 2s;
+}
+
+.buttonContainer.After{
+    opacity: 1;
 }
 
 p{
     font-size: 0.75rem;
-}
-
-
-
-.buttonContainer{
-    margin-top: 5%;
 }
 
 .emailContainer{
@@ -70,14 +110,24 @@ p{
     width: 5%;
     min-width: 50px;
     min-height: 50px;
+    transition: 0.5s;
     &:after{
         content:"";
         display:block;
         padding-bottom: 100%;
+        
+    }
+   
+    &:hover{
+        width: 7.5%;
+        background-color: red;
+        font-size: 1.5rem;
+  
     }
     .fa-envelope{
         color: #000000;
     }
+
 }
 
 

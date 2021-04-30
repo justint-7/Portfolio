@@ -32,9 +32,13 @@ aside{
     bottom: 5%;
     display: flex;
     flex-direction: column;
-
     i{
         margin-top: 100%;
         font-size: 1.1rem;
+        transition: 0.25s;
+        &:hover{
+            color: red;
+        }
     }
+ 
 }

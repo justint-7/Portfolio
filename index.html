@@ -34,19 +34,22 @@
                 <nav>
                     <ul class="topNav">
                         <li><a class = "home" href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">PROJECTS</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
                         <li><a href="#">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="textAndButton">
                     <div class="textSlide">
-                        <h4 class="hello">HELLO</h4>
+                        <div class="helloContainer">
+                            <img src="assets/lineShape.png">
+                            <h4 class="hello">HELLO</h4>
+                        </div>
                         <h1>I'm <span>Justin</span> Tseng</h1>
-                        <h1>passionate with Design </h1>
+                        <h1>Front-end Web Developer </h1>
                         <p>I use my knowledge of web development technologies to create and deploy websites that are intuitive, accessible and satisfying.</p>
                     </div>
-                    <div class="buttonContainer">
+                    <div class="buttonContainer Before">
                         <button class= "workButton">SEE WORK</button>
                     </div>
                 </div>
@@ -56,7 +59,7 @@
 
             </header>
             <main>
-                <section class="about">
+                <section class="about" id="about">
                     <div class="flexParentMain">
                         <div class="selfPortraitContainer">
                             <img src="assets/portrait.png" alt="Self-portrait of Justin Tseng">
@@ -103,7 +106,7 @@
                             </li>
                         </ul>
                 </section>
-                <section class="projects">
+                <section class="projects" id="projects">
                     <div class="projectIntroParent">
                     <h2>Featured Work</h2>
                     <p>Please feel free to check out any of my recent works!</p>
@@ -144,5 +147,6 @@
             </main>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>

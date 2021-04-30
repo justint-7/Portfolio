@@ -361,6 +361,26 @@ nav .topNav .home {
   color: #e4b86d;
 }
 
+nav .topNav a {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.topNav a:hover {
+  color: red;
+}
+
+.helloContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.helloContainer img {
+  height: 2px;
+  margin: 1.5rem 1rem 0 0;
+}
+
 h1 {
   font-size: 3rem;
   margin: 0.5rem 0 0.5rem 0;
@@ -372,14 +392,40 @@ h1 span {
 
 .textAndButton {
   margin: 10% 0 0 15%;
+  height: 40%;
+  position: relative;
+}
+
+.textSlide {
+  position: absolute;
+  -webkit-transition: 2s;
+  transition: 2s;
+  left: -30%;
+  opacity: 0;
+}
+
+.textSlide.After {
+  left: 0;
+  bottom: 25%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  margin-top: 5%;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.buttonContainer.After {
+  opacity: 1;
 }
 
 p {
   font-size: 0.75rem;
-}
-
-.buttonContainer {
-  margin-top: 5%;
 }
 
 .emailContainer {
@@ -399,12 +445,20 @@ p {
   width: 5%;
   min-width: 50px;
   min-height: 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .emailContainer:after {
   content: "";
   display: block;
   padding-bottom: 100%;
+}
+
+.emailContainer:hover {
+  width: 7.5%;
+  background-color: red;
+  font-size: 1.5rem;
 }
 
 .emailContainer .fa-envelope {
@@ -470,6 +524,12 @@ aside {
 .socials i {
   margin-top: 100%;
   font-size: 1.1rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.socials i:hover {
+  color: red;
 }
 
 section {
