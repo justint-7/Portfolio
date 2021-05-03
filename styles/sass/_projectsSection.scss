@@ -1,13 +1,15 @@
 .projects{
     background-image: url("../assets/Overlay.png");
     background-color: #1f222d;
+    height: auto;
+    max-height: none;
     h2{
         color: #ffffff;
     }
 }
 .projectIntroParent, 
 .projectButtons{
-    padding: 10% 0 0 15%;
+    padding: 5% 0 5% 15%;
 }
 
 .projectViewScreen{
@@ -16,7 +18,6 @@
 }
 .projectDisplay{
     position: relative;
-    height: 300px;
     display: flex;
     li{
         width: 500px;
@@ -25,16 +26,40 @@
         }
     }
 
-
 .projectImageContainer{
     background-color: grey;
     height: 100%;
     position: relative;
     transition: 0.5s;
-    &:hover{
-        background-color: black;
-
+    .overlay{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: #95a2cf;
+        opacity: 0.7;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover{
+            opacity: 0;
+        }
     }
+}
+
+.focus{
+    opacity: 0;
+}
+
+.transitionOOB{
+    transition: 0.5s;
+}
+
+.projectGit{
+    position: absolute;
+    right:0;
+    bottom: 0;
+    font-size: 2rem;
 }
 
 .projectButtons{
@@ -49,16 +74,43 @@
 .scrollBar{
     background-color: #e1e9fb;
     width: 60%;
-    height: 5px;
+    height: 10px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    .currentBar{
+        background-color: #3e4455;
+        height: inherit;
+        width: 10%;
+        position: absolute;
+    }
 }
 
-.currentBar{
-    background-color: #3e4455;
-    height: inherit;
-    width: 10%;
-    position: absolute;
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }
+
+.projectTitle{
+    text-align: center;
+  }
+
+// .currentDisplayProject{
+//     display: flex;
+//     margin: 0 auto;
+// }
+
+
+.currentImageContainer{
+    width: 50%;
+    margin: 0 auto;
+   
+}
+
 

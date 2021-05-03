@@ -638,6 +638,8 @@ section {
 .projects {
   background-image: url("../assets/Overlay.png");
   background-color: #1f222d;
+  height: auto;
+  max-height: none;
 }
 
 .projects h2 {
@@ -646,7 +648,7 @@ section {
 
 .projectIntroParent,
 .projectButtons {
-  padding: 10% 0 0 15%;
+  padding: 5% 0 5% 15%;
 }
 
 .projectViewScreen {
@@ -656,7 +658,6 @@ section {
 
 .projectDisplay {
   position: relative;
-  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -677,8 +678,37 @@ section {
   transition: 0.5s;
 }
 
-.projectImageContainer:hover {
-  background-color: black;
+.projectImageContainer .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #95a2cf;
+  opacity: 0.7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.projectImageContainer .overlay:hover {
+  opacity: 0;
+}
+
+.focus {
+  opacity: 0;
+}
+
+.transitionOOB {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.projectGit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 2rem;
 }
 
 .projectButtons {
@@ -698,17 +728,42 @@ section {
 .scrollBar {
   background-color: #e1e9fb;
   width: 60%;
-  height: 5px;
+  height: 10px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.currentBar {
+.scrollBar .currentBar {
   background-color: #3e4455;
   height: inherit;
   width: 10%;
   position: absolute;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.projectTitle {
+  text-align: center;
+}
+
+.currentImageContainer {
+  width: 50%;
+  margin: 0 auto;
 }
 
 @media (max-width: 1015px) {
