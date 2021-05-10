@@ -70,11 +70,12 @@ portfolioApp.setProjectListeners = () =>{
     const projectDisplay = document.querySelector('.projectDisplay');
     const currentBar = document.querySelector('.currentBar');
     const projectElementArray = document.querySelectorAll('.projectDisplay > li');
-    console.log (projectElementArray);
+
  
 
     const maxDisplayLength= projectDisplay.scrollWidth;
     const maxLeftPosition=  -maxDisplayLength + document.documentElement.clientWidth *.90;
+    console.log (maxLeftPosition);
     const numOfProjects= projectDisplay.childElementCount;
 
     projectDisplay.addEventListener('mousedown', (event)=>{
