@@ -165,10 +165,6 @@ projectElementArray.forEach(projectElement => {
             projectGit.href=portfolioApp.projectsArray[e.target.id].github;
             projectLive.href=portfolioApp.projectsArray[e.target.id].live;
             
-            
-            // projectGit.textContent=portfolioApp.projectsArray[e.target.id].title;
-            // projectLive.textContent=portfolioApp.projectsArray[e.target.id].title;
-
         }
     })
 })

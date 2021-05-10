@@ -791,12 +791,14 @@ section {
   -webkit-box-shadow: 5px 10px #717896;
           box-shadow: 5px 10px #717896;
   border: 2px solid black;
-  height: 40vh;
 }
 
 .currentImageContainer {
-  width: 50%;
+  width: 40%;
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .currentImageText {
