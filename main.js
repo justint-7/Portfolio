@@ -75,9 +75,16 @@ portfolioApp.setProjectListeners = () =>{
 
     const maxDisplayLength= projectDisplay.scrollWidth;
     const maxLeftPosition=  -maxDisplayLength + document.documentElement.clientWidth *.90;
+    console.log('maxdisplaylength')
     console.log (maxDisplayLength);
+    console.log('document clientwidth')
     console.log (document.documentElement.clientWidth);
+    console.log('maxleft')
     console.log (maxLeftPosition);
+    console.log('scrollwidth')
+    console.log(projectDisplay.scrollWidth)
+    console.log('clientwidth')
+    console.log(projectDisplay.clientWidth)
     
     const numOfProjects= projectDisplay.childElementCount;
 
