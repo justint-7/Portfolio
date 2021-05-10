@@ -3,13 +3,18 @@
     background-color: #1f222d;
     height: auto;
     max-height: none;
+    padding-bottom: 5%;
     h2{
         color: #ffffff;
     }
 }
-.projectIntroParent, 
+.projectIntroParent{
+    padding: 5% 0 0% 15%;
+}
+
 .projectButtons{
-    padding: 5% 0 5% 15%;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .projectViewScreen{
@@ -20,8 +25,8 @@
     position: relative;
     display: flex;
     li{
-        width: 500px;
-        padding: 0 1% 0 1%;
+        width: 25vw;
+        padding: 0 0.5% 0 0.5%;
         flex-shrink: 0;
         }
     }
@@ -52,14 +57,7 @@
 }
 
 .transitionOOB{
-    transition: 0.5s;
-}
-
-.projectGit{
-    position: absolute;
-    right:0;
-    bottom: 0;
-    font-size: 2rem;
+    transition: 0.25s;
 }
 
 .projectButtons{
@@ -74,16 +72,18 @@
 .scrollBar{
     background-color: #e1e9fb;
     width: 60%;
-    height: 10px;
+    height: 15px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    margin: 2% auto;
     .currentBar{
         background-color: #3e4455;
         height: inherit;
         width: 10%;
         position: absolute;
+        cursor: grab;
     }
 }
 
@@ -97,20 +97,49 @@
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.projectTitle{
-    text-align: center;
-  }
-
-// .currentDisplayProject{
-//     display: flex;
-//     margin: 0 auto;
-// }
-
+.currentDisplayProject{
+    display: flex;
+    justify-content: center;
+    padding: 2% 0 4% 0;
+    background-color: #ffffff;
+    margin: 0 5%;
+    box-shadow: 5px 10px #717896;
+    border: 2px solid black;
+    height: 40vh;
+}
 
 .currentImageContainer{
-    width: 50%;
-    margin: 0 auto;
-   
+    width:50%;  
+    margin: 0;
+}
+
+.currentImageText{
+    width: 40%;
+    margin-left: 5%;
+}
+
+.currentImageText{
+    .projectTitle{
+        text-align: center;
+        color: #3d4862;
+        margin-bottom: 5%;
+    }
+    p{
+        color:#54668b;
+    }
+    .highlightSkills{
+        color: #717896;
+        font-size: 0.9rem;
+        margin-top: 1%;
+    }
+    i{
+        color: #3d4862;
+        padding-right: 5%;
+    }
+
+}
+.projectDescription{
+    font-size: 1rem;
 }
 
 

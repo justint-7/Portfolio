@@ -20,11 +20,12 @@ background-color: #ffffff;
 
 .flexText{
     padding: 0 0% 0% 5%;
-    width:50%;
+    width:60%;
     p{
         width: 90%;
         color: #54668b;
         font-weight: medium;
+        font-size: 0.8rem;
     }
     button{
         margin-top: 10%;
@@ -51,18 +52,18 @@ background-color: #ffffff;
         }
         h3{
             height: 60px;
-            padding-top: 10%;
+            padding: 7.5% 0 2.5% 0;
             margin: 0;
         }
         i{
             padding-left: 5%;
-            width: 60px
+    
+            height: 100%;
         }
         p{
             color: #54668b;
-            padding: 0 5% 0 5%;
-            height: 60px;
             text-align: center;
+            padding: 0 5% 0 5%;
             
         }
         .stripe{
@@ -71,15 +72,21 @@ background-color: #ffffff;
             width: 100%;
         }
     }
-
 }
-
+.selfPortraitContainer img{
+    box-shadow: 5px 10px #3d4862;
+    
+}
 .flexSkill{
     display:flex;
     justify-content: center;
     align-items: center;
-
     i{
        font-size: 3rem;
     }
+}
+
+.flexSkillDescription{
+    display:flex;
+    height: 80px;
 }

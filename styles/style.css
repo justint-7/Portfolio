@@ -310,6 +310,10 @@ button:hover {
   background-color: red;
 }
 
+.hidden {
+  display: none;
+}
+
 header {
   height: 100vh;
   max-width: 95vw;
@@ -395,6 +399,10 @@ h1 span {
   margin: 10% 0 0 15%;
   height: 40%;
   position: relative;
+}
+
+.textAndButton p {
+  font-size: 1rem;
 }
 
 .textSlide {
@@ -556,13 +564,14 @@ section {
 
 .flexText {
   padding: 0 0% 0% 5%;
-  width: 50%;
+  width: 60%;
 }
 
 .flexText p {
   width: 90%;
   color: #54668b;
   font-weight: medium;
+  font-size: 0.8rem;
 }
 
 .flexText button {
@@ -597,26 +606,30 @@ section {
 
 .skillsParent li h3 {
   height: 60px;
-  padding-top: 10%;
+  padding: 7.5% 0 2.5% 0;
   margin: 0;
 }
 
 .skillsParent li i {
   padding-left: 5%;
-  width: 60px;
+  height: 100%;
 }
 
 .skillsParent li p {
   color: #54668b;
-  padding: 0 5% 0 5%;
-  height: 60px;
   text-align: center;
+  padding: 0 5% 0 5%;
 }
 
 .skillsParent li .stripe {
   background-color: #fbc25e;
   height: 0.8rem;
   width: 100%;
+}
+
+.selfPortraitContainer img {
+  -webkit-box-shadow: 5px 10px #3d4862;
+          box-shadow: 5px 10px #3d4862;
 }
 
 .flexSkill {
@@ -635,20 +648,32 @@ section {
   font-size: 3rem;
 }
 
+.flexSkillDescription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+}
+
 .projects {
   background-image: url("../assets/Overlay.png");
   background-color: #1f222d;
   height: auto;
   max-height: none;
+  padding-bottom: 5%;
 }
 
 .projects h2 {
   color: #ffffff;
 }
 
-.projectIntroParent,
+.projectIntroParent {
+  padding: 5% 0 0% 15%;
+}
+
 .projectButtons {
-  padding: 5% 0 5% 15%;
+  padding: 0;
+  margin: 0 auto;
 }
 
 .projectViewScreen {
@@ -664,8 +689,8 @@ section {
 }
 
 .projectDisplay li {
-  width: 500px;
-  padding: 0 1% 0 1%;
+  width: 25vw;
+  padding: 0 0.5% 0 0.5%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -700,15 +725,8 @@ section {
 }
 
 .transitionOOB {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.projectGit {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  font-size: 2rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .projectButtons {
@@ -728,11 +746,12 @@ section {
 .scrollBar {
   background-color: #e1e9fb;
   width: 60%;
-  height: 10px;
+  height: 15px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  margin: 2% auto;
 }
 
 .scrollBar .currentBar {
@@ -740,6 +759,8 @@ section {
   height: inherit;
   width: 10%;
   position: absolute;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 .noselect {
@@ -757,13 +778,55 @@ section {
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.projectTitle {
-  text-align: center;
+.currentDisplayProject {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2% 0 4% 0;
+  background-color: #ffffff;
+  margin: 0 5%;
+  -webkit-box-shadow: 5px 10px #717896;
+          box-shadow: 5px 10px #717896;
+  border: 2px solid black;
+  height: 40vh;
 }
 
 .currentImageContainer {
   width: 50%;
-  margin: 0 auto;
+  margin: 0;
+}
+
+.currentImageText {
+  width: 40%;
+  margin-left: 5%;
+}
+
+.currentImageText .projectTitle {
+  text-align: center;
+  color: #3d4862;
+  margin-bottom: 5%;
+}
+
+.currentImageText p {
+  color: #54668b;
+}
+
+.currentImageText .highlightSkills {
+  color: #717896;
+  font-size: 0.9rem;
+  margin-top: 1%;
+}
+
+.currentImageText i {
+  color: #3d4862;
+  padding-right: 5%;
+}
+
+.projectDescription {
+  font-size: 1rem;
 }
 
 @media (max-width: 1015px) {

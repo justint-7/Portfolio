@@ -19,8 +19,8 @@
                     <img src="assets/menuClosed.png" alt="Menu button on sidebar">
                 </div>
                 <div class= "socials">
-                    <i class="fab fa-github"></i>
-                    <i class="fab fa-linkedin-in"></i>
+                    <a href='https://github.com/justint-7'><i class="fab fa-github"></i></a>
+                    <a href='https://www.linkedin.com/in/justin-tseng-b51565207/'><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </nav>
             
@@ -69,9 +69,11 @@
                         </div>
                         <div class="flexText">
                             <h4 class="who">WHO AM I?</h4>
-                            <h2>Passionate About Acessibility</h2>
+                            <h2>Passionate About Accessibility</h2>
                             <h2>Logical and Clean solutions </h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet eligendi ad harum reiciendis vel eum fugiat similique velit, accusantium voluptates. Quae distinctio libero nobis nesciunt fugiat blanditiis quaerat nemo dolorum.</p>
+                            <p>In every project I work on, I ensure that the end result exceeds expectation though my knack for critical thinking, adaptive approches and earnest effort.
+                                My previous experiences in health services and live broadcasting has made me strong communicator that understands when to lead and when to listen, and I know that this will a great boon to any team I become a part of.
+                                </p>
                             <div class="signatureContainer">
                                 <img src="assets/signature.png" alt="Justin's Signature.">
                             </div>
@@ -83,7 +85,9 @@
                                 <h3>Javascript (ES6+)</h3>
                                 <div class="flexSkill">
                                     <i class="fab fa-js"></i>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.  </p>
+                                    <div class="flexSkillDescription">
+                                        <p>DRY, clean code for logical creations</p>
+                                    </div>
                                 </div>
                                 <p class="stripe"></p>
                             </li>
@@ -91,7 +95,9 @@
                                 <h3>HTML5/CSS3</h3>
                                 <div class="flexSkill">
                                     <i class="fab fa-html5"></i>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. ! </p>
+                                    <div class="flexSkillDescription">
+                                        <p>Able to translate designs to beautiful, live websites </p>
+                                    </div>
                                 </div>
                                 <p class="stripe"></p>
                             </li>
@@ -99,15 +105,19 @@
                                 <h3>React</h3>
                                 <div class="flexSkill">
                                     <i class="fab fa-react"></i>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. ! </p>
+                                    <div class="flexSkillDescription">
+                                        <p>Experienced with react hooks and functional components</p>
+                                    </div>
                                 </div>
                                 <p class="stripe"></p>
                             </li>
                             <li>
-                                <h3>Paired Programming</h3>
+                                <h3>Pair Programming</h3>
                                 <div class="flexSkill">
                                     <i class="fas fa-user-friends"></i>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. ! </p>
+                                    <div class="flexSkillDescription">
+                                        <p>Comfortable in both collaborative and solo settings</p>
+                                    </div>
                                 </div>
                                 <p class="stripe"></p>
                             </li>
@@ -115,7 +125,9 @@
                                 <h3>Responsive Design</h3>
                                 <div class="flexSkill">
                                     <i class="far fa-window-restore"></i>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. ! </p>
+                                    <div class="flexSkillDescription">
+                                        <p>Smart use of media queries for responsive websites on any display</p>
+                                    </div>
                                 </div>
                                 <p class="stripe"></p>
                             </li>
@@ -123,40 +135,42 @@
                                 <h3>Accessibility Practices</h3>
                                 <div class="flexSkill">
                                     <i class="fas fa-universal-access"></i>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. ! </p>
+                                    <div class="flexSkillDescription">
+                                        <p>Implements best practices so that websites are accessible by everyone</p>
+                                    </div>
                                 </div>
                                 <p class="stripe"></p>
                             </li>
                         </ul>
                 </section>
-                <section class="projects">
+                <section class="projects noselect">
                     <div class="projectIntroParent">
                     <h2>Featured Work</h2>
                     <p>Please feel free to check out any of my recent works!</p>
-
                     </div>
-                    <div class="projectViewScreen">
+                    <div class="projectButtons">
+                        <button>Prev</button>
+                        <button>Next</button>
+                    </div>
+                    <div class="projectViewScreen ">
                         <ul class="projectDisplay noselect">
                             <li>
                                 <div class="projectImageContainer">
                                    <img class="projectImage" src="assets/projectWhatDoUNo.PNG" alt="Preview of  project whatDoUNo" draggable ="false">
-                                   <div class="overlay"></div>
-                                   <i class="projectGit fab fa-github"></i>
-
+                                   <div class="overlay" id = "0"></div>
                                 </div>
-                                
                             </li>
                             <li>
                                 <div class="projectImageContainer">
                                     <img class="projectImage" src="assets/projectAniWho.PNG" alt="Preview of project aniWho UI" draggable ="false">
-                                    <div class="overlay"></div>
+                                    <div class="overlay" id = "1"></div>
                                 </div>
                             </li>
                             <li>
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectSuperHeroUniverse.PNG" alt="Preview of project superHeroUniverse UI" draggable ="false">
-                                        <div class="overlay"></div>
+                                        <div class="overlay" id = "2"></div>
                                     </div>
                                 </div>
                             </li>
@@ -164,7 +178,7 @@
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectDelicious.PNG" alt="Preview of project Delicious" draggable ="false">
-                                        <div class="overlay"></div>
+                                        <div class="overlay" id = "3"></div>
                                     </div>
                                 </div>
                             </li>
@@ -172,12 +186,14 @@
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectMineSweeper.PNG" alt="Preview of project projectMineSweeper" draggable ="false">
-                                        <div class="overlay"></div>
+                                        <div class="overlay" id = "4"></div>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="projectImageContainer">
+                                    <img class="projectImage" src="assets/comingSoon.PNG" alt="Coming soon placeholder image" draggable ="false">
+                                    <div class="overlay" ></div>
       
                                 </div>
                             </li>
@@ -187,24 +203,19 @@
                         <div class="currentBar"></div>
                     </div>
                     <div>
-                        <h2 class="projectTitle">TITLE</h2>
-                        <div class='currentDisplayProject'>
+                        <div class="currentDisplayProject">
                             <figure class="currentImageContainer">
-                                <img class="currentImage" src="assets/projectWhatDoUNo.PNG">
+                                <img class="currentImage" src="assets/projectWhatDoUNo.PNG" alt="Project WhatDoYouNo preview image">
                             </figure>
                             <article class="currentImageText">
-                                <h3>|REACT|</h3>
+                                <h2 class="projectTitle">WhatDoYouNo?</h2>
+                                <h3 class="highlightSkills"> REACT / FIREBASE / COLLABORATIVE WORK / RESTFUL API</h3>
+                                <p class="projectDescription"> An interactive literary game based on a client brief. Players are shown a definition and two homophones, and they are tasked to pick the correct homophone that matches the definition. Answer 10 questions as fast as possible and submit your highscore!  </p>
+                                <a class="projectGit" href="https://github.com/whatDoYouNo/whatDoYouNo"><i class="projectGit fab fa-github"> Github</i></a>
+                                <a class= "projectLive" href= "https://boring-jackson-ea7019.netlify.app/""><i class="fas fa-globe"> Live site</i></a>
                             </article>
                         </div>
-
-
-
                     </div>
-                    <div class="projectButtons">
-                        <button>Prev</button>
-                        <button>Next</button>
-                    </div>
-                    
                 </section>
             </main>
         </div>
