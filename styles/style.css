@@ -304,6 +304,7 @@ button {
   height: 55px;
   -webkit-transition: 0.25s;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 button:hover {
@@ -669,11 +670,31 @@ section {
 
 .projectIntroParent {
   padding: 5% 0 0% 15%;
+  margin-bottom: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.projectIntroParent p {
+  margin-bottom: 0;
 }
 
 .projectButtons {
-  padding: 0;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: 8%;
+}
+
+.projectButtons button {
+  margin: 0 10px;
 }
 
 .projectViewScreen {
@@ -722,25 +743,12 @@ section {
 
 .overlay.focus {
   opacity: 0;
+  cursor: auto;
 }
 
 .transitionOOB {
   -webkit-transition: 0.25s;
   transition: 0.25s;
-}
-
-.projectButtons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 5% 0 0 0;
-}
-
-.projectButtons button {
-  margin: 0 10px;
 }
 
 .scrollBar {

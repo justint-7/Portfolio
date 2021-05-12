@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/cd74478c2a.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
 </head>
 <body>
@@ -58,9 +59,9 @@
 
             </header>
             <main>
-                <section class="about" id="about">
-                    <div class="flexParentMain">
-                        <div class="selfPortraitContainer">
+                <section class="about">
+                    <div class="flexParentMain" >
+                        <div class="selfPortraitContainer" id="about">
                             <img src="assets/portrait.png" alt="Self-portrait of Justin Tseng">
                             <p class="rotatedAbout">About</p>
                             <div class="darkBlue"></div>
@@ -143,34 +144,37 @@
                             </li>
                         </ul>
                 </section>
-                <section class="projects noselect">
+                <section class="projects noselect" >
                     <div class="projectIntroParent">
-                    <h2>Featured Work</h2>
-                    <p>Please feel free to check out any of my recent works!</p>
+                    <div>
+                        <h2 id="projects">Featured Work</h2>
+                        <p>Please feel free to check out any of my recent works!</p>
                     </div>
                     <div class="projectButtons">
-                        <button>Prev</button>
-                        <button>Next</button>
+                        <button id ="previous">Prev</button>
+                        <button id ="next">Next</button>
+                    </div>
+
                     </div>
                     <div class="projectViewScreen ">
                         <ul class="projectDisplay noselect">
                             <li>
                                 <div class="projectImageContainer">
                                    <img class="projectImage" src="assets/projectAniWho.PNG" alt="Preview of  project aniWho" draggable ="false">
-                                   <div class="overlay focus" id = "0"></div>
+                                   <div class="overlay focus" id = "project0"></div>
                                 </div>
                             </li>
                             <li>
                                 <div class="projectImageContainer">
                                     <img class="projectImage" src="assets/projectWhatDoUNo.PNG" alt="Preview of project whatDoYouNo UI" draggable ="false">
-                                    <div class="overlay" id = "1"></div>
+                                    <div class="overlay" id = "project1"></div>
                                 </div>
                             </li>
                             <li>
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectSuperHeroUniverse.PNG" alt="Preview of project superHeroUniverse UI" draggable ="false">
-                                        <div class="overlay" id = "2"></div>
+                                        <div class="overlay" id = "project2"></div>
                                     </div>
                                 </div>
                             </li>
@@ -178,7 +182,7 @@
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectDelicious.PNG" alt="Preview of project Delicious" draggable ="false">
-                                        <div class="overlay" id = "3"></div>
+                                        <div class="overlay" id = "project3"></div>
                                     </div>
                                 </div>
                             </li>
@@ -186,7 +190,7 @@
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectMineSweeper.PNG" alt="Preview of project projectMineSweeper" draggable ="false">
-                                        <div class="overlay" id = "4"></div>
+                                        <div class="overlay" id = "project4"></div>
                                     </div>
                                 </div>
                             </li>

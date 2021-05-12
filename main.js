@@ -61,7 +61,7 @@ portfolioApp.InitialSlideAnimation = () =>{
 portfolioApp.setProjectListeners = () =>{
     let x=0;
     let xPercent=0;
-
+    let currentCounter = 0;
     let isDragImages = false;
     let isDragBar=false;
 
@@ -69,24 +69,11 @@ portfolioApp.setProjectListeners = () =>{
     const projectDisplay = document.querySelector('.projectDisplay');
     const currentBar = document.querySelector('.currentBar');
     const projectElementArray = document.querySelectorAll('.projectDisplay > li');
-
- 
+    const previousButton= document.querySelector('#previous');
+    const nextButton = document.querySelector('#next');
 
     const maxDisplayLength= projectDisplay.clientWidth*1.6;
     const maxLeftPosition=  -maxDisplayLength + document.documentElement.clientWidth *.90;
-    
-    // console.log('maxdisplaylength')
-    // console.log (maxDisplayLength);
-    // console.log('document clientwidth')
-    // console.log (document.documentElement.clientWidth);
-    // console.log('maxleft')
-    // console.log (maxLeftPosition);
-    // console.log('scrollwidth')
-    // console.log(projectDisplay.scrollWidth)
-    // console.log('clientwidth')
-    // console.log(projectDisplay.clientWidth)
-    // console.log ('newscrollwidth')
-    // console.log(projectDisplay.clientWidth*1.6)
     
     const numOfProjects= projectDisplay.childElementCount;
 
@@ -159,31 +146,82 @@ portfolioApp.setProjectListeners = () =>{
         isDragBar=true;      
     }); 
 
-projectElementArray.forEach(projectElement => {
-    projectElement.addEventListener('click', e =>{
-        if (e.target.id){
-            const previousFocus = document.querySelector('.focus');
-            previousFocus.classList.remove('focus');
-            e.target.classList.add('focus');
-            console.log(e.target);
-            const projectTitle = document.querySelector('.projectTitle')
-            const projectSkills = document.querySelector('.highlightSkills')
-            const projectDescription = document.querySelector('.projectDescription')
-            const projectImage = document.querySelector('.currentImage')
-            const projectGit = document.querySelector('.projectGit')
-            const projectLive = document.querySelector('.projectLive')
 
-            projectImage.src=portfolioApp.projectsArray[e.target.id].imageSrc;
-            projectImage.alt=portfolioApp.projectsArray[e.target.id].imageAlt;
-            projectTitle.textContent=portfolioApp.projectsArray[e.target.id].title;
-            projectSkills.textContent=portfolioApp.projectsArray[e.target.id].skills;
-            projectDescription.textContent=portfolioApp.projectsArray[e.target.id].description;
-            projectGit.href=portfolioApp.projectsArray[e.target.id].github;
-            projectLive.href=portfolioApp.projectsArray[e.target.id].live;
-            
+
+
+    const setCurrent = number =>{
+        const previousFocus = document.querySelector('.focus');
+        const newFocus = document.querySelector(`#project${number}`);
+        previousFocus.classList.remove('focus');
+        newFocus.classList.add('focus');
+        const projectTitle = document.querySelector('.projectTitle')
+        const projectSkills = document.querySelector('.highlightSkills')
+        const projectDescription = document.querySelector('.projectDescription')
+        const projectImage = document.querySelector('.currentImage')
+        const projectGit = document.querySelector('.projectGit')
+        const projectLive = document.querySelector('.projectLive')
+
+        projectImage.src=portfolioApp.projectsArray[number].imageSrc;
+        projectImage.alt=portfolioApp.projectsArray[number].imageAlt;
+        projectTitle.textContent=portfolioApp.projectsArray[number].title;
+        projectSkills.textContent=portfolioApp.projectsArray[number].skills;
+        projectDescription.textContent=portfolioApp.projectsArray[number].description;
+        projectGit.href=portfolioApp.projectsArray[number].github;
+        projectLive.href=portfolioApp.projectsArray[number].live;
+    }
+
+    projectElementArray.forEach(projectElement => {
+        projectElement.addEventListener('click', e =>{
+            if (e.target.id.slice(-1)){
+                currentCounter=e.target.id.slice(-1);
+                setCurrent(currentCounter);
+                console.log(currentCounter);
+                // const previousFocus = document.querySelector('.focus');
+                // previousFocus.classList.remove('focus');
+                // e.target.classList.add('focus');
+                // const projectTitle = document.querySelector('.projectTitle')
+                // const projectSkills = document.querySelector('.highlightSkills')
+                // const projectDescription = document.querySelector('.projectDescription')
+                // const projectImage = document.querySelector('.currentImage')
+                // const projectGit = document.querySelector('.projectGit')
+                // const projectLive = document.querySelector('.projectLive')
+
+                // projectImage.src=portfolioApp.projectsArray[e.target.id].imageSrc;
+                // projectImage.alt=portfolioApp.projectsArray[e.target.id].imageAlt;
+                // projectTitle.textContent=portfolioApp.projectsArray[e.target.id].title;
+                // projectSkills.textContent=portfolioApp.projectsArray[e.target.id].skills;
+                // projectDescription.textContent=portfolioApp.projectsArray[e.target.id].description;
+                // projectGit.href=portfolioApp.projectsArray[e.target.id].github;
+                // projectLive.href=portfolioApp.projectsArray[e.target.id].live;
+            }
+        })
+    })
+    $('a[href*="#"]').click(event=>{
+        event.preventDefault();
+        // console.log (event);
+        // console.log (event.hash);
+        // console.log (this.hash);
+        console.log ($(event.currentTarget.hash).offset().top)
+        $('html, body').animate({
+            'scrollTop': $(event.currentTarget.hash).offset().top
+        }, $(event.currentTarget.hash).offset().top);
+    }
+    )
+
+    previousButton.addEventListener('click',(event)=>{
+        if (currentCounter>0){
+            currentCounter-=1
+        setCurrent(currentCounter);
         }
     })
-})
+
+    nextButton.addEventListener('click',(event)=>{
+        if (currentCounter<4){
+            currentCounter+=1
+        setCurrent(currentCounter);
+        }
+    })
+
 
 }
 

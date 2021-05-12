@@ -10,11 +10,20 @@
 }
 .projectIntroParent{
     padding: 5% 0 0% 15%;
+    margin-bottom: 1%;
+    display: flex;
+    p{
+        margin-bottom: 0;
+    }
 }
-
 .projectButtons{
-    padding: 0;
-    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    margin-left: 8%;
+    button{
+        margin: 0 10px;
+    }
 }
 
 .projectViewScreen{
@@ -51,23 +60,17 @@
 
 .focus{
     opacity: 0;
+
 }
 .overlay.focus{
     opacity: 0;
+    cursor: auto;
 }
 
 .transitionOOB{
     transition: 0.25s;
 }
 
-.projectButtons{
-    display: flex;
-    justify-content: center;
-    padding: 5% 0 0 0;
-    button{
-        margin: 0 10px;
-    }
-}
 
 .scrollBar{
     background-color: #e1e9fb;
@@ -104,8 +107,7 @@
     background-color: #ffffff;
     margin: 0 5%;
     box-shadow: 5px 10px #717896;
-    border: 2px solid black;
-    
+    border: 2px solid black;    
 }
 
 .currentImageContainer{
