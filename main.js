@@ -3,29 +3,29 @@ const portfolioApp={};
 
 portfolioApp.projectsArray = [
     {projectNumber: 1,
-    title:'WhatDoYouNo',
-    skills: 'REACT / FIREBASE / RESTFUL API / COLLABORATIVE WORK /',
-    description: 'An interactive literary game based on a client brief. Players are shown a definition and two homophones, and they are tasked to pick the correct homophone that matches the definition. Answer 10 questions as fast as possible and submit your highscore!',
-    live: 'https://boring-jackson-ea7019.netlify.app/',
-    github: 'https://github.com/whatDoYouNo/whatDoYouNo',
-    imageSrc: 'assets/projectWhatDoUNo.PNG',
-    imageAlt: 'Project whatDoYouNo preview image'
+        title:'AniWho',
+        skills: 'REACT / RESTFUL API',
+        description: 'A guessing quiz game built in react. Players try to guess or name as many anime characters as they can within a time limit. A functional on-screen word bank limits user input and allows for play using taps and clicks.',
+        live: 'https://vigilant-hopper-997c29.netlify.app',
+        github: 'https://github.com/justint-7/aniWho',
+        imageSrc: 'assets/projectAniWho.PNG',
+        imageAlt: 'Project AniWho preview image'
     },
     {projectNumber: 2,
-    title:'AniWho',
-    skills: 'REACT / RESTFUL API',
-    description: 'A guessing quiz game built in react. Players try to guess or name as many anime characters as they can within a time limit. A functional on-screen word bank limits user input and allows for play using taps and clicks.',
-    live: 'https://vigilant-hopper-997c29.netlify.app',
-    github: 'https://github.com/justint-7/aniWho',
-    imageSrc: 'assets/projectAniWho.PNG',
-    imageAlt: 'Project AniWho preview image'
+        title:'WhatDoYouNo',
+        skills: 'REACT / FIREBASE / RESTFUL API / COLLABORATIVE WORK',
+        description: 'An interactive literary game based on a client brief. Players are shown a definition and two homophones, and they are tasked to pick the correct homophone that matches the definition. Answer 10 questions as fast as possible and submit your highscore!',
+        live: 'https://boring-jackson-ea7019.netlify.app/',
+        github: 'https://github.com/whatDoYouNo/whatDoYouNo',
+        imageSrc: 'assets/projectWhatDoUNo.PNG',
+        imageAlt: 'Project whatDoYouNo preview image'
     },
     {projectNumber: 3,
         title:'SuperHero Universe',
         skills: 'Javascript(ES6+)/API/HTML5/CSS3/Paired Programming',
         description: 'An application to interact and browse the SuperHero API. The highlight feature of this app is the auto-completing drop down menu! You can also favourite heroes and add them to your team using the heart icon.',
-        live: 'https://github.com/superHeroProject/superHeroProject',
-        github: 'https://superheroproject.github.io/superHeroProject/',
+        live: 'https://superheroproject.github.io/superHeroProject/',
+        github: 'https://github.com/superHeroProject/superHeroProject',
         imageSrc: 'assets/projectSuperHeroUniverse.PNG',
         imageAlt: 'Project SuperHero Universe preview image'
     },
@@ -47,7 +47,6 @@ portfolioApp.projectsArray = [
         imageSrc: 'assets/projectMineSweeper.PNG',
         imageAlt: 'Project MineSweeper preview image'
     }    
-
 ];
 
 portfolioApp.InitialSlideAnimation = () =>{
@@ -73,18 +72,21 @@ portfolioApp.setProjectListeners = () =>{
 
  
 
-    const maxDisplayLength= projectDisplay.scrollWidth;
+    const maxDisplayLength= projectDisplay.clientWidth*1.6;
     const maxLeftPosition=  -maxDisplayLength + document.documentElement.clientWidth *.90;
-    console.log('maxdisplaylength')
-    console.log (maxDisplayLength);
-    console.log('document clientwidth')
-    console.log (document.documentElement.clientWidth);
-    console.log('maxleft')
-    console.log (maxLeftPosition);
-    console.log('scrollwidth')
-    console.log(projectDisplay.scrollWidth)
-    console.log('clientwidth')
-    console.log(projectDisplay.clientWidth)
+    
+    // console.log('maxdisplaylength')
+    // console.log (maxDisplayLength);
+    // console.log('document clientwidth')
+    // console.log (document.documentElement.clientWidth);
+    // console.log('maxleft')
+    // console.log (maxLeftPosition);
+    // console.log('scrollwidth')
+    // console.log(projectDisplay.scrollWidth)
+    // console.log('clientwidth')
+    // console.log(projectDisplay.clientWidth)
+    // console.log ('newscrollwidth')
+    // console.log(projectDisplay.clientWidth*1.6)
     
     const numOfProjects= projectDisplay.childElementCount;
 
@@ -160,6 +162,9 @@ portfolioApp.setProjectListeners = () =>{
 projectElementArray.forEach(projectElement => {
     projectElement.addEventListener('click', e =>{
         if (e.target.id){
+            const previousFocus = document.querySelector('.focus');
+            previousFocus.classList.remove('focus');
+            e.target.classList.add('focus');
             console.log(e.target);
             const projectTitle = document.querySelector('.projectTitle')
             const projectSkills = document.querySelector('.highlightSkills')

@@ -716,11 +716,11 @@ section {
   cursor: pointer;
 }
 
-.projectImageContainer .overlay:hover {
+.focus {
   opacity: 0;
 }
 
-.focus {
+.overlay.focus {
   opacity: 0;
 }
 
