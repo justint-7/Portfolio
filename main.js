@@ -52,9 +52,13 @@ portfolioApp.projectsArray = [
 portfolioApp.InitialSlideAnimation = () =>{
     const textSlide = document.querySelector('.textSlide');
     const buttonContainer = document.querySelector('.buttonContainer');
-    textSlide.classList.add('After');
+    setTimeout(() => {
+        textSlide.classList.add('After');
+    }, 100);    
+
     setTimeout(() => {
         buttonContainer.classList.add('After')
+        
     }, 2000);
 }
 
@@ -175,38 +179,9 @@ portfolioApp.setProjectListeners = () =>{
             if (e.target.id.slice(-1)){
                 currentCounter=e.target.id.slice(-1);
                 setCurrent(currentCounter);
-                console.log(currentCounter);
-                // const previousFocus = document.querySelector('.focus');
-                // previousFocus.classList.remove('focus');
-                // e.target.classList.add('focus');
-                // const projectTitle = document.querySelector('.projectTitle')
-                // const projectSkills = document.querySelector('.highlightSkills')
-                // const projectDescription = document.querySelector('.projectDescription')
-                // const projectImage = document.querySelector('.currentImage')
-                // const projectGit = document.querySelector('.projectGit')
-                // const projectLive = document.querySelector('.projectLive')
-
-                // projectImage.src=portfolioApp.projectsArray[e.target.id].imageSrc;
-                // projectImage.alt=portfolioApp.projectsArray[e.target.id].imageAlt;
-                // projectTitle.textContent=portfolioApp.projectsArray[e.target.id].title;
-                // projectSkills.textContent=portfolioApp.projectsArray[e.target.id].skills;
-                // projectDescription.textContent=portfolioApp.projectsArray[e.target.id].description;
-                // projectGit.href=portfolioApp.projectsArray[e.target.id].github;
-                // projectLive.href=portfolioApp.projectsArray[e.target.id].live;
             }
         })
     })
-    $('a[href*="#"]').click(event=>{
-        event.preventDefault();
-        // console.log (event);
-        // console.log (event.hash);
-        // console.log (this.hash);
-        console.log ($(event.currentTarget.hash).offset().top)
-        $('html, body').animate({
-            'scrollTop': $(event.currentTarget.hash).offset().top
-        }, $(event.currentTarget.hash).offset().top);
-    }
-    )
 
     previousButton.addEventListener('click',(event)=>{
         if (currentCounter>0){
@@ -221,7 +196,23 @@ portfolioApp.setProjectListeners = () =>{
         setCurrent(currentCounter);
         }
     })
+}
 
+portfolioApp.setMenuListeners = () => {
+    $('a[href*="#"]').click(event=>{
+        event.preventDefault();
+        console.log ($(event.currentTarget.hash).offset().top)
+        $('html, body').animate({
+            'scrollTop': $(event.currentTarget.hash).offset().top
+        }, 750);
+    })
+
+    const menuButton = document.querySelector('.menuIconContainer')
+    menuButton.addEventListener('click',(event) => {
+        const sideMenu = document.querySelector('.sideMenu');
+        sideMenu.classList.toggle('closed');
+        menuButton.classList.toggle('menuOpen');   
+    })
 
 }
 
@@ -231,6 +222,7 @@ portfolioApp.setProjectListeners = () =>{
 portfolioApp.init = () =>{
     portfolioApp.InitialSlideAnimation();
     portfolioApp.setProjectListeners();
+    portfolioApp.setMenuListeners();
 }
 
     portfolioApp.init();

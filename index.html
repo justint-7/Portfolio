@@ -17,26 +17,33 @@
         <aside>
             <nav class="sideBar">
                 <div class="menuIconContainer">
-                    <img src="assets/menuClosed.png" alt="Menu button on sidebar">
+                    <img class="menuIcon" src="assets/menuClosed.png" alt="Menu button on sidebar">
                 </div>
                 <div class= "socials">
                     <a href='https://github.com/justint-7'><i class="fab fa-github"></i></a>
                     <a href='https://www.linkedin.com/in/justin-tseng-b51565207/'><i class="fab fa-linkedin-in"></i></a>
                 </div>
+                <div class="sideMenu closed">
+                    <ul class="">
+                        <li><a class = "home" href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
             </nav>
-            
         </aside>
         <div class="innerWrapper">
-            <header>
+            <header id="home">
                 <div class="backgroundOverlayContainer">
                     <img src="assets/Overlay.png">
                 </div>
                 <nav>
                     <ul class="topNav">
-                        <li><a class = "home" href="#">HOME</a></li>
+                        <li><a class = "home" href="#home">HOME</a></li>
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#projects">PROJECTS</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="textAndButton">
@@ -50,12 +57,12 @@
                         <p>I use my knowledge of web development technologies to create and deploy websites that are intuitive, accessible and satisfying.</p>
                     </div>
                     <div class="buttonContainer Before">
-                        <button class= "workButton">SEE WORK</button>
+                        <a href="#projects"><button class= "workButton">SEE WORK</button></a>
                     </div>
                 </div>
-                <div class="emailContainer">
+                <!-- <div class="emailContainer">
                     <i class="far fa-envelope"></i>
-                </div>
+                </div> -->
 
             </header>
             <main>
@@ -221,9 +228,36 @@
                         </div>
                     </div>
                 </section>
+                <section class="contact" id ="contact">
+                    <div class="formContainer">
+                        <h2>Contact Me</h2>
+                        <form name="contact" method="POST" data-netlify="true">
+                            <div class="flexParent">
+                                <div class="smallFlexParent">
+                                    <label for="name">
+                                        Your name: <input type="text" name="name" id="name" placeholder="Your Name">
+                                    </label>
+                                    <label for="email">
+                                        Your name: <input type="email" name="email" id="email" placeholder="Your Email">
+                                    </label>  
+                                </div>
+                                <label for="subject">
+                                    Your name: <input type="text" name="subject" id="subject" placeholder="Subject">
+                                </label>  
+                            </div>
+                            <label for="message">
+                                Your name: <textarea name="message" id="message" placeholder="Write Message"></textarea>
+                            </label>
+                            <div>
+                                <button type="submit">Send Message</button>  
+                            </div>
+                        </form>
+                    </div>
+                </section>
             </main>
         </div>
     </div>
+
     <script src="main.js"></script>
 </body>
 </html>
