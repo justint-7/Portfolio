@@ -53,11 +53,11 @@ portfolioApp.InitialSlideAnimation = () =>{
     const textSlide = document.querySelector('.textSlide');
     const buttonContainer = document.querySelector('.buttonContainer');
     setTimeout(() => {
-        textSlide.classList.add('After');
+        textSlide.classList.add('after');
     }, 100);    
 
     setTimeout(() => {
-        buttonContainer.classList.add('After')
+        buttonContainer.classList.add('after')
         
     }, 2000);
 }

@@ -2,9 +2,10 @@
 aside{
     width: 5vw;
     max-width: 100px;
-    background-color: #191d28;
+    background-color: #000000;
     height: 100vh;
     position: relative;
+
 }
 
 .sideBar{
@@ -16,25 +17,34 @@ aside{
     justify-content: center;
     align-items: center;
     background-color: #191d28;
-    min-width: 50px;
-    z-index: 2;
+
 }
 
 .menuIconContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 4;
     border-radius: 100%;
+    border: transparent 20%;
     cursor: pointer;
     transition: 0.25s;
+    width: 70%; 
     &:hover{
         background-color: grey;
+    }
+    &:after{
+        content:"";
+        display:block;
+        padding-bottom: 100%;
+    }
+    img{
+        width: 100%;
     }
 }
 .socials{
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     bottom: 5%;
     display: flex;
     flex-direction: column;
@@ -68,8 +78,19 @@ aside{
 } 
 .closed{
     transform: translateX(-100%);
+
 }
 
 .menuOpen{
     background-color: grey;
+}
+
+.sideBarCover{
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    width: 5%;
+    background-color: #191d28;
+ 
+ 
 }
