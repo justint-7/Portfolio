@@ -331,6 +331,7 @@ header .backgroundOverlayContainer {
   top: 0;
   height: 1080px;
   width: 1920px;
+  z-index: 0;
 }
 
 nav {
@@ -443,6 +444,7 @@ aside {
   background-color: #000000;
   height: 100vh;
   position: relative;
+  z-index: 1;
 }
 
 .sideBar {
@@ -528,7 +530,7 @@ aside {
   top: 0;
   width: 50vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
   left: 100%;
   background-color: #191d28;
   -webkit-transition: -webkit-transform 1s;
