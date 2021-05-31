@@ -177,8 +177,10 @@ portfolioApp.setProjectListeners = () =>{
     projectElementArray.forEach(projectElement => {
         projectElement.addEventListener('click', e =>{
             if (e.target.id.slice(-1)){
-                currentCounter=e.target.id.slice(-1);
+                currentCounter=parseInt(e.target.id.slice(-1));
+                console.log(currentCounter);
                 setCurrent(currentCounter);
+     
             }
         })
     })
@@ -186,6 +188,7 @@ portfolioApp.setProjectListeners = () =>{
     previousButton.addEventListener('click',(event)=>{
         if (currentCounter>0){
             currentCounter-=1
+            console.log(currentCounter);
         setCurrent(currentCounter);
         }
     })
@@ -193,6 +196,7 @@ portfolioApp.setProjectListeners = () =>{
     nextButton.addEventListener('click',(event)=>{
         if (currentCounter<4){
             currentCounter+=1
+            console.log(currentCounter);
         setCurrent(currentCounter);
         }
     })
