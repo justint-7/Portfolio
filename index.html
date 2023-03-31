@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/cd74478c2a.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
 </head>
 <body>
@@ -17,26 +18,36 @@
         <aside>
             <nav class="sideBar">
                 <div class="menuIconContainer">
-                    <img src="assets/menuClosed.png" alt="Menu button on sidebar">
+                    <img class="menuIcon" src="assets/menuClosed.png" alt="Menu button on sidebar">
                 </div>
                 <div class= "socials">
                     <a href='https://github.com/justint-7'><i class="fab fa-github"></i></a>
                     <a href='https://www.linkedin.com/in/justin-tseng-b51565207/'><i class="fab fa-linkedin-in"></i></a>
                 </div>
+                <div class="sideMenu closed">
+                    <ul class="">
+                        <li><a class = "home" href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="sideBarCover">
+                </div>
             </nav>
-            
+
         </aside>
         <div class="innerWrapper">
-            <header>
+            <header id="home">
                 <div class="backgroundOverlayContainer">
                     <img src="assets/Overlay.png">
                 </div>
                 <nav>
                     <ul class="topNav">
-                        <li><a class = "home" href="#">HOME</a></li>
+                        <li><a class = "home" href="#home">HOME</a></li>
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#projects">PROJECTS</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="textAndButton">
@@ -50,18 +61,18 @@
                         <p>I use my knowledge of web development technologies to create and deploy websites that are intuitive, accessible and satisfying.</p>
                     </div>
                     <div class="buttonContainer Before">
-                        <button class= "workButton">SEE WORK</button>
+                        <a href="#projects"><button class= "workButton">SEE WORK</button></a>
                     </div>
                 </div>
-                <div class="emailContainer">
+                <!-- <div class="emailContainer">
                     <i class="far fa-envelope"></i>
-                </div>
+                </div> -->
 
             </header>
             <main>
-                <section class="about" id="about">
-                    <div class="flexParentMain">
-                        <div class="selfPortraitContainer">
+                <section class="about">
+                    <div class="flexParentMain" >
+                        <div class="selfPortraitContainer" id="about">
                             <img src="assets/portrait.png" alt="Self-portrait of Justin Tseng">
                             <p class="rotatedAbout">About</p>
                             <div class="darkBlue"></div>
@@ -78,7 +89,7 @@
                             <div class="signatureContainer">
                                 <img src="assets/signature.png" alt="Justin's Signature.">
                             </div>
-                            <button>DOWNLOAD CV</button>
+                            <button><a href = "assets/justinTsengResume.pdf" download>DOWNLOAD RESUME</a></button>
                         </div>
                     </div>                    
                         <ul class="skillsParent">
@@ -144,34 +155,37 @@
                             </li>
                         </ul>
                 </section>
-                <section class="projects noselect">
+                <section class="projects noselect" >
                     <div class="projectIntroParent">
-                    <h2>Featured Work</h2>
-                    <p>Please feel free to check out any of my recent works!</p>
+                    <div>
+                        <h2 id="projects">Featured Work</h2>
+                        <p>Please feel free to check out any of my recent works!</p>
                     </div>
                     <div class="projectButtons">
-                        <button>Prev</button>
-                        <button>Next</button>
+                        <button id ="previous">Prev</button>
+                        <button id ="next">Next</button>
+                    </div>
+
                     </div>
                     <div class="projectViewScreen ">
                         <ul class="projectDisplay noselect">
                             <li>
                                 <div class="projectImageContainer">
-                                   <img class="projectImage" src="assets/projectWhatDoUNo.PNG" alt="Preview of  project whatDoUNo" draggable ="false">
-                                   <div class="overlay" id = "0"></div>
+                                   <img class="projectImage" src="assets/projectAniWho.PNG" alt="Preview of  project aniWho" draggable ="false">
+                                   <div class="overlay focus" id = "project0"></div>
                                 </div>
                             </li>
                             <li>
                                 <div class="projectImageContainer">
-                                    <img class="projectImage" src="assets/projectAniWho.PNG" alt="Preview of project aniWho UI" draggable ="false">
-                                    <div class="overlay" id = "1"></div>
+                                    <img class="projectImage" src="assets/projectWhatDoUNo.PNG" alt="Preview of project whatDoYouNo UI" draggable ="false">
+                                    <div class="overlay" id = "project1"></div>
                                 </div>
                             </li>
                             <li>
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectSuperHeroUniverse.PNG" alt="Preview of project superHeroUniverse UI" draggable ="false">
-                                        <div class="overlay" id = "2"></div>
+                                        <div class="overlay" id = "project2"></div>
                                     </div>
                                 </div>
                             </li>
@@ -179,7 +193,7 @@
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectDelicious.PNG" alt="Preview of project Delicious" draggable ="false">
-                                        <div class="overlay" id = "3"></div>
+                                        <div class="overlay" id = "project3"></div>
                                     </div>
                                 </div>
                             </li>
@@ -187,7 +201,7 @@
                                 <div class="projectImageContainer">
                                     <div class="projectImageContainer">
                                         <img class="projectImage" src="assets/projectMineSweeper.PNG" alt="Preview of project projectMineSweeper" draggable ="false">
-                                        <div class="overlay" id = "4"></div>
+                                        <div class="overlay" id = "project4"></div>
                                     </div>
                                 </div>
                             </li>
@@ -206,21 +220,48 @@
                     <div>
                         <div class="currentDisplayProject">
                             <figure class="currentImageContainer">
-                                <img class="currentImage" src="assets/projectWhatDoUNo.PNG" alt="Project WhatDoYouNo preview image">
+                                <img class="currentImage" src="assets/projectAniWho.PNG" alt="Project AniWho preview image">
                             </figure>
                             <article class="currentImageText">
-                                <h2 class="projectTitle">WhatDoYouNo?</h2>
-                                <h3 class="highlightSkills"> REACT / FIREBASE / COLLABORATIVE WORK / RESTFUL API</h3>
-                                <p class="projectDescription"> An interactive literary game based on a client brief. Players are shown a definition and two homophones, and they are tasked to pick the correct homophone that matches the definition. Answer 10 questions as fast as possible and submit your highscore!  </p>
-                                <a class="projectGit" href="https://github.com/whatDoYouNo/whatDoYouNo"><i class="projectGit fab fa-github"> Github</i></a>
-                                <a class= "projectLive" href= "https://boring-jackson-ea7019.netlify.app/""><i class="fas fa-globe"> Live site</i></a>
+                                <h2 class="projectTitle">AniWho</h2>
+                                <h3 class="highlightSkills">REACT / RESTFUL API</h3>
+                                <p class="projectDescription">A guessing quiz game built in react. Players try to guess or name as many anime characters as they can within a time limit. A functional on-screen word bank limits user input and allows for play using taps and clicks.  </p>
+                                <a class="projectGit" href="https://github.com/justint-7/aniWho"><i class="projectGit fab fa-github"> Github</i></a>
+                                <a class= "projectLive" href= "https://vigilant-hopper-997c29.netlify.app"><i class="fas fa-globe"> Live site</i></a>
                             </article>
                         </div>
+                    </div>
+                </section>
+                <section class="contact" id ="contact">
+                    <div class="formContainer">
+                        <h2>Contact Me</h2>
+                        <form name="contact" method="POST" data-netlify="true">
+                            <div class="flexParent">
+                                <div class="smallFlexParent">
+                                    <label for="name">
+                                        Your name: <input type="text" name="name" id="name" placeholder="Your Name">
+                                    </label>
+                                    <label for="email">
+                                        Your name: <input type="email" name="email" id="email" placeholder="Your Email">
+                                    </label>  
+                                </div>
+                                <label for="subject">
+                                    Your name: <input type="text" name="subject" id="subject" placeholder="Subject">
+                                </label>  
+                            </div>
+                            <label for="message">
+                                Your name: <textarea name="message" id="message" placeholder="Write Message"></textarea>
+                            </label>
+                            <div>
+                                <button type="submit">Send Message</button>  
+                            </div>
+                        </form>
                     </div>
                 </section>
             </main>
         </div>
     </div>
+
     <script src="main.js"></script>
 </body>
 </html>

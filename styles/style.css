@@ -253,6 +253,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: inherit;
 }
 
 .innerWrapper {
@@ -304,6 +305,7 @@ button {
   height: 55px;
   -webkit-transition: 0.25s;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 button:hover {
@@ -327,10 +329,9 @@ header {
 header .backgroundOverlayContainer {
   position: absolute;
   top: 0;
-  left: 0;
   height: 1080px;
   width: 1920px;
-  z-index: -1;
+  z-index: 0;
 }
 
 nav {
@@ -413,7 +414,7 @@ h1 span {
   opacity: 0;
 }
 
-.textSlide.After {
+.textSlide.after {
   left: 0;
   bottom: 25%;
   visibility: visible;
@@ -429,7 +430,7 @@ h1 span {
   transition: 2s;
 }
 
-.buttonContainer.After {
+.buttonContainer.after {
   opacity: 1;
 }
 
@@ -437,49 +438,13 @@ p {
   font-size: 0.75rem;
 }
 
-.emailContainer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: #fbc25e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 5%;
-  min-width: 50px;
-  min-height: 50px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.emailContainer:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-
-.emailContainer:hover {
-  width: 7.5%;
-  background-color: red;
-  font-size: 1.5rem;
-}
-
-.emailContainer .fa-envelope {
-  color: #000000;
-}
-
 aside {
   width: 5vw;
   max-width: 100px;
-  background-color: #191d28;
+  background-color: #000000;
   height: 100vh;
   position: relative;
+  z-index: 1;
 }
 
 .sideBar {
@@ -500,8 +465,6 @@ aside {
       -ms-flex-align: center;
           align-items: center;
   background-color: #191d28;
-  min-width: 50px;
-  z-index: 2;
 }
 
 .menuIconContainer {
@@ -514,11 +477,32 @@ aside {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 75%;
+  z-index: 4;
+  border-radius: 100%;
+  border: transparent 20%;
+  cursor: pointer;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  width: 70%;
+}
+
+.menuIconContainer:hover {
+  background-color: grey;
+}
+
+.menuIconContainer:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.menuIconContainer img {
+  width: 100%;
 }
 
 .socials {
   position: fixed;
+  z-index: 4;
   bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -538,6 +522,44 @@ aside {
 
 .socials i:hover {
   color: red;
+}
+
+.sideMenu {
+  max-width: 960px;
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  z-index: 3;
+  left: 100%;
+  background-color: #191d28;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  opacity: 0.97;
+  background-image: url("../assets/Overlay.png");
+}
+
+.sideMenu a:hover {
+  color: #fbc25e;
+}
+
+.closed {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.menuOpen {
+  background-color: grey;
+}
+
+.sideBarCover {
+  position: fixed;
+  z-index: 3;
+  height: 100%;
+  width: 5%;
+  background-color: #191d28;
 }
 
 section {
@@ -669,11 +691,31 @@ section {
 
 .projectIntroParent {
   padding: 5% 0 0% 15%;
+  margin-bottom: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.projectIntroParent p {
+  margin-bottom: 0;
 }
 
 .projectButtons {
-  padding: 0;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: 8%;
+}
+
+.projectButtons button {
+  margin: 0 10px;
 }
 
 .projectViewScreen {
@@ -716,31 +758,18 @@ section {
   cursor: pointer;
 }
 
-.projectImageContainer .overlay:hover {
+.focus {
   opacity: 0;
 }
 
-.focus {
+.overlay.focus {
   opacity: 0;
+  cursor: auto;
 }
 
 .transitionOOB {
   -webkit-transition: 0.25s;
   transition: 0.25s;
-}
-
-.projectButtons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 5% 0 0 0;
-}
-
-.projectButtons button {
-  margin: 0 10px;
 }
 
 .scrollBar {
@@ -801,6 +830,12 @@ section {
   display: flex;
 }
 
+.currentImageContainer img {
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .currentImageText {
   width: 40%;
   margin-left: 5%;
@@ -835,4 +870,218 @@ section {
   html {
     font-size: 100%;
   }
+  .projectIntroParent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 0;
+  }
+  .projectIntroParent h2,
+  .projectIntroParent p {
+    text-align: center;
+  }
+  .projectButtons {
+    margin: 5% auto 0 auto;
+  }
+  button {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 775px) {
+  nav ul {
+    padding-left: 0;
+  }
+  .textAndButton {
+    margin: 25% 5%;
+    text-align: center;
+  }
+  .textAndButton p {
+    margin: 0 5%;
+  }
+  .textSlide {
+    left: 0;
+    bottom: -30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .helloContainer {
+    width: 20%;
+  }
+  .buttonContainer {
+    width: 100%;
+  }
+  .about {
+    min-height: 1100px;
+  }
+  .flexParentMain {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 0%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .flexParentMain .selfPortraitContainer {
+    width: 30%;
+  }
+  .flexParentMain .flexText {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .flexParentMain .flexText p {
+    font-size: 1rem;
+  }
+  .flexParentMain .flexText button {
+    margin-top: 2%;
+  }
+  .signatureContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .flexSkillDescription {
+    display: none;
+  }
+  .currentDisplayProject {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .currentImageText {
+    width: 80%;
+    text-align: center;
+  }
+  .currentImageContainer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 80%;
+  }
+  .about {
+    min-height: 1000px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 75%;
+  }
+  .about {
+    min-height: 900px;
+  }
+  .projectButtons button {
+    width: 100px;
+    height: 33px;
+  }
+  .skillsParent li h3 {
+    font-size: 1.1rem;
+    padding-bottom: 0;
+    height: 50px;
+  }
+}
+
+.contact {
+  height: auto;
+  background-image: url("../assets/Overlay.png");
+  background-color: #1f222d;
+  padding: 5%;
+}
+
+.formContainer {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  -webkit-box-shadow: 5px 10px #717896;
+          box-shadow: 5px 10px #717896;
+  border: 2px solid black;
+}
+
+form .flexParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+form .flexParent .smallFlexParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.contact h2 {
+  margin: 0 auto;
+  padding-top: 2.5%;
+  text-align: center;
+}
+
+form {
+  padding-bottom: 5%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+form label,
+form input {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0 1%;
+}
+
+form textarea {
+  width: 100%;
+  height: 25vh;
+}
+
+form button {
+  display: block;
+  margin: 1% auto;
 }

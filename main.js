@@ -3,29 +3,29 @@ const portfolioApp={};
 
 portfolioApp.projectsArray = [
     {projectNumber: 1,
-    title:'WhatDoYouNo',
-    skills: 'REACT / FIREBASE / RESTFUL API / COLLABORATIVE WORK /',
-    description: 'An interactive literary game based on a client brief. Players are shown a definition and two homophones, and they are tasked to pick the correct homophone that matches the definition. Answer 10 questions as fast as possible and submit your highscore!',
-    live: 'https://boring-jackson-ea7019.netlify.app/',
-    github: 'https://github.com/whatDoYouNo/whatDoYouNo',
-    imageSrc: 'assets/projectWhatDoUNo.PNG',
-    imageAlt: 'Project whatDoYouNo preview image'
+        title:'AniWho',
+        skills: 'REACT / RESTFUL API',
+        description: 'A guessing quiz game built in react. Players try to guess or name as many anime characters as they can within a time limit. A functional on-screen word bank limits user input and allows for play using taps and clicks.',
+        live: 'https://vigilant-hopper-997c29.netlify.app',
+        github: 'https://github.com/justint-7/aniWho',
+        imageSrc: 'assets/projectAniWho.PNG',
+        imageAlt: 'Project AniWho preview image'
     },
     {projectNumber: 2,
-    title:'AniWho',
-    skills: 'REACT / RESTFUL API',
-    description: 'A guessing quiz game built in react. Players try to guess or name as many anime characters as they can within a time limit. A functional on-screen word bank limits user input and allows for play using taps and clicks.',
-    live: 'https://vigilant-hopper-997c29.netlify.app',
-    github: 'https://github.com/justint-7/aniWho',
-    imageSrc: 'assets/projectAniWho.PNG',
-    imageAlt: 'Project AniWho preview image'
+        title:'WhatDoYouNo',
+        skills: 'REACT / FIREBASE / RESTFUL API / COLLABORATIVE WORK',
+        description: 'An interactive literary game based on a client brief. Players are shown a definition and two homophones, and they are tasked to pick the correct homophone that matches the definition. Answer 10 questions as fast as possible and submit your highscore!',
+        live: 'https://boring-jackson-ea7019.netlify.app/',
+        github: 'https://github.com/whatDoYouNo/whatDoYouNo',
+        imageSrc: 'assets/projectWhatDoUNo.PNG',
+        imageAlt: 'Project whatDoYouNo preview image'
     },
     {projectNumber: 3,
         title:'SuperHero Universe',
         skills: 'Javascript(ES6+)/API/HTML5/CSS3/Paired Programming',
         description: 'An application to interact and browse the SuperHero API. The highlight feature of this app is the auto-completing drop down menu! You can also favourite heroes and add them to your team using the heart icon.',
-        live: 'https://github.com/superHeroProject/superHeroProject',
-        github: 'https://superheroproject.github.io/superHeroProject/',
+        live: 'https://superheroproject.github.io/superHeroProject/',
+        github: 'https://github.com/superHeroProject/superHeroProject',
         imageSrc: 'assets/projectSuperHeroUniverse.PNG',
         imageAlt: 'Project SuperHero Universe preview image'
     },
@@ -47,22 +47,25 @@ portfolioApp.projectsArray = [
         imageSrc: 'assets/projectMineSweeper.PNG',
         imageAlt: 'Project MineSweeper preview image'
     }    
-
 ];
 
 portfolioApp.InitialSlideAnimation = () =>{
     const textSlide = document.querySelector('.textSlide');
     const buttonContainer = document.querySelector('.buttonContainer');
-    textSlide.classList.add('After');
     setTimeout(() => {
-        buttonContainer.classList.add('After')
+        textSlide.classList.add('after');
+    }, 100);    
+
+    setTimeout(() => {
+        buttonContainer.classList.add('after')
+        
     }, 2000);
 }
 
 portfolioApp.setProjectListeners = () =>{
     let x=0;
     let xPercent=0;
-
+    let currentCounter = 0;
     let isDragImages = false;
     let isDragBar=false;
 
@@ -70,12 +73,12 @@ portfolioApp.setProjectListeners = () =>{
     const projectDisplay = document.querySelector('.projectDisplay');
     const currentBar = document.querySelector('.currentBar');
     const projectElementArray = document.querySelectorAll('.projectDisplay > li');
+    const previousButton= document.querySelector('#previous');
+    const nextButton = document.querySelector('#next');
 
- 
-
-    const maxDisplayLength= projectDisplay.scrollWidth;
+    const maxDisplayLength= projectDisplay.clientWidth*1.6;
     const maxLeftPosition=  -maxDisplayLength + document.documentElement.clientWidth *.90;
-    console.log (maxLeftPosition);
+    
     const numOfProjects= projectDisplay.childElementCount;
 
     projectDisplay.addEventListener('mousedown', (event)=>{
@@ -147,28 +150,73 @@ portfolioApp.setProjectListeners = () =>{
         isDragBar=true;      
     }); 
 
-projectElementArray.forEach(projectElement => {
-    projectElement.addEventListener('click', e =>{
-        if (e.target.id){
-            console.log(e.target);
-            const projectTitle = document.querySelector('.projectTitle')
-            const projectSkills = document.querySelector('.highlightSkills')
-            const projectDescription = document.querySelector('.projectDescription')
-            const projectImage = document.querySelector('.currentImage')
-            const projectGit = document.querySelector('.projectGit')
-            const projectLive = document.querySelector('.projectLive')
 
-            projectImage.src=portfolioApp.projectsArray[e.target.id].imageSrc;
-            projectImage.alt=portfolioApp.projectsArray[e.target.id].imageAlt;
-            projectTitle.textContent=portfolioApp.projectsArray[e.target.id].title;
-            projectSkills.textContent=portfolioApp.projectsArray[e.target.id].skills;
-            projectDescription.textContent=portfolioApp.projectsArray[e.target.id].description;
-            projectGit.href=portfolioApp.projectsArray[e.target.id].github;
-            projectLive.href=portfolioApp.projectsArray[e.target.id].live;
-            
+
+
+    const setCurrent = number =>{
+        const previousFocus = document.querySelector('.focus');
+        const newFocus = document.querySelector(`#project${number}`);
+        previousFocus.classList.remove('focus');
+        newFocus.classList.add('focus');
+        const projectTitle = document.querySelector('.projectTitle')
+        const projectSkills = document.querySelector('.highlightSkills')
+        const projectDescription = document.querySelector('.projectDescription')
+        const projectImage = document.querySelector('.currentImage')
+        const projectGit = document.querySelector('.projectGit')
+        const projectLive = document.querySelector('.projectLive')
+
+        projectImage.src=portfolioApp.projectsArray[number].imageSrc;
+        projectImage.alt=portfolioApp.projectsArray[number].imageAlt;
+        projectTitle.textContent=portfolioApp.projectsArray[number].title;
+        projectSkills.textContent=portfolioApp.projectsArray[number].skills;
+        projectDescription.textContent=portfolioApp.projectsArray[number].description;
+        projectGit.href=portfolioApp.projectsArray[number].github;
+        projectLive.href=portfolioApp.projectsArray[number].live;
+    }
+
+    projectElementArray.forEach(projectElement => {
+        projectElement.addEventListener('click', e =>{
+            if (e.target.id.slice(-1)){
+                currentCounter=parseInt(e.target.id.slice(-1));
+                console.log(currentCounter);
+                setCurrent(currentCounter);
+     
+            }
+        })
+    })
+
+    previousButton.addEventListener('click',(event)=>{
+        if (currentCounter>0){
+            currentCounter-=1
+            console.log(currentCounter);
+        setCurrent(currentCounter);
         }
     })
-})
+
+    nextButton.addEventListener('click',(event)=>{
+        if (currentCounter<4){
+            currentCounter+=1
+            console.log(currentCounter);
+        setCurrent(currentCounter);
+        }
+    })
+}
+
+portfolioApp.setMenuListeners = () => {
+    $('a[href*="#"]').click(event=>{
+        event.preventDefault();
+        console.log ($(event.currentTarget.hash).offset().top)
+        $('html, body').animate({
+            'scrollTop': $(event.currentTarget.hash).offset().top
+        }, 750);
+    })
+
+    const menuButton = document.querySelector('.menuIconContainer')
+    menuButton.addEventListener('click',(event) => {
+        const sideMenu = document.querySelector('.sideMenu');
+        sideMenu.classList.toggle('closed');
+        menuButton.classList.toggle('menuOpen');   
+    })
 
 }
 
@@ -178,6 +226,7 @@ projectElementArray.forEach(projectElement => {
 portfolioApp.init = () =>{
     portfolioApp.InitialSlideAnimation();
     portfolioApp.setProjectListeners();
+    portfolioApp.setMenuListeners();
 }
 
     portfolioApp.init();

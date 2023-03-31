@@ -9,10 +9,9 @@ header{
     .backgroundOverlayContainer{
         position: absolute;
         top: 0;
-        left: 0;
         height: 1080px;
         width: 1920px;
-        z-index: -1;
+        z-index: 0;
     }
 }
 
@@ -80,7 +79,7 @@ nav{
 
 }
 
-.textSlide.After {
+.textSlide.after {
     left: 0;
     bottom: 25%;
     visibility: visible;
@@ -95,7 +94,7 @@ nav{
     transition: 2s;
 }
 
-.buttonContainer.After{
+.buttonContainer.after{
     opacity: 1;
 }
 
@@ -103,34 +102,34 @@ p{
     font-size: 0.75rem;
 }
 
-.emailContainer{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-color: #fbc25e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 5%;
-    min-width: 50px;
-    min-height: 50px;
-    transition: 0.5s;
-    &:after{
-        content:"";
-        display:block;
-        padding-bottom: 100%;
-    }
-    &:hover{
-        width: 7.5%;
-        background-color: red;
-        font-size: 1.5rem;
+// .emailContainer{
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//     background-color: #fbc25e;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 5%;
+//     min-width: 50px;
+//     min-height: 50px;
+//     transition: 0.5s;
+//     &:after{
+//         content:"";
+//         display:block;
+//         padding-bottom: 100%;
+//     }
+//     &:hover{
+//         width: 7.5%;
+//         background-color: red;
+//         font-size: 1.5rem;
   
-    }
-    .fa-envelope{
-        color: #000000;
-    }
+//     }
+//     .fa-envelope{
+//         color: #000000;
+//     }
 
-}
+// }
 
 
 

@@ -3,4 +3,150 @@
     html{
         font-size: 100%;
     }
+    .projectIntroParent{
+        flex-direction: column;
+        padding-left: 0;
+        h2,
+        p{
+            text-align: center;
+        }
+    }
+
+    .projectButtons{
+        margin: 5% auto 0 auto;
+    }
+    button{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 775px){
+
+    nav ul{
+        padding-left: 0;
+    }
+
+
+    .textAndButton{
+        margin: 25% 5%;
+        text-align: center;
+        p{
+            margin: 0 5%;
+        }
+    }
+
+    .textSlide{
+        left: 0;
+        bottom: -30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .helloContainer{
+        width: 20%;
+
+    }
+    .buttonContainer{
+        width: 100%;
+    }
+
+    .about{
+        min-height: 1100px;
+    }
+
+    .flexParentMain{
+        flex-direction: column;
+        margin-left: 0%;
+        align-items: center;
+        .selfPortraitContainer{
+            width: 30%;
+        }
+        .flexText{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+            p{
+                font-size: 1rem;
+            }
+            button{
+                margin-top: 2%;
+            }
+        }
+    }
+
+    .signatureContainer{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .flexSkillDescription{
+        display: none;
+    }
+    .currentDisplayProject{
+        flex-direction: column;
+        align-items: center;
+    }
+    .currentImageText{
+        width: 80%;
+        text-align: center;
+    }
+    .currentImageContainer{
+        width: 80%;
+    }
+
+
+}
+
+
+@media (max-width: 600px){
+
+    html{
+        font-size:90%;
+    }
+}
+
+@media (max-width: 550px){
+
+    html{
+        font-size:80%;
+    }
+    .about{
+        min-height: 1000px;
+    }
+
+}
+
+@media (max-width: 450px){
+
+    html{
+        font-size:75%;
+    }
+    .about{
+        min-height: 900px;
+    }
+
+    .projectButtons{
+        button{
+            width: 100px;
+            height: 33px;
+        }
+    }
+
+    .skillsParent{
+        li{
+            h3{
+                font-size: 1.1rem;
+                padding-bottom: 0;
+                height: 50px;
+            }
+        }
+    }
 }

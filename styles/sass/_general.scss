@@ -17,6 +17,7 @@ body{
 
     margin: 0 auto;
     display: flex;
+    height: inherit;
 }
 
 .innerWrapper{
@@ -68,6 +69,7 @@ h4{
     width: 180px;
     height: 55px;
     transition: 0.25s;
+    cursor: pointer;
     &:hover{
         background-color: red;
     }
